@@ -8,7 +8,6 @@
   packages = [
     # pkgs.go
     pkgs.python311
-    pkgs.python311Packages.pip
     # pkgs.nodejs_20
     # pkgs.nodePackages.nodemon
     # pkgs.conda
@@ -46,7 +45,7 @@
       onCreate = {
         # Example: install JS dependencies from NPM
         # npm-install = "npm install";
-        install-requirements = "pip install -r requirements.txt";
+        install-requirements = "python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt";
       };
       # Runs when the workspace is (re)started
       onStart = {
